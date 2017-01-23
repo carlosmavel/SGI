@@ -14,7 +14,4 @@ Criando um App
 Para criar um novo app, rode:
 
 create-react-app sgi
-Referência
 
-React Installation Guide
-Create React App GitHub page
