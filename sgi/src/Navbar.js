@@ -24,8 +24,8 @@ class Navbar extends Component {
           </div>
           <div className="collapse navbar-collapse" id="app-navbar-collapse">
             <ul className="nav navbar-nav navbar-right">
-              <li><a href="#"><span className="glyphicon glyphicon-user"></span> Sign Up</a></li>
-              <li><a  onClick={this.props.toggleLoginModal} href="#" ><span className="glyphicon glyphicon-log-in"></span> Login</a></li>
+              <li><a name='signUp' onClick={this.props.toggleModal} href="#"><span className="glyphicon glyphicon-user"></span> SignUp</a></li>
+              <li><a name='login' onClick={this.props.toggleModal} href="#" ><span className="glyphicon glyphicon-log-in"></span> Login</a></li>
             </ul>
           </div>
         </div>

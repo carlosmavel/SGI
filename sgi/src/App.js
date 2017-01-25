@@ -2,27 +2,52 @@ import React, { Component } from 'react';
 import './App.css';
 
 import Navbar from './Navbar';
+
 import Login from './Login.js';
+import SignUp from './SignUp.js'
+
+
+
+const modals = {
+  login: Login,
+  signUp: SignUp
+};
 
 
 class App extends Component {
 
   constructor(props){
     super(props);
-    this.state = {showLoginModal: false};
+    this.state = {
+      showModal: false,
+      modal: "login",
+    };
   }
 
 
-  toggleLoginModal = () => {
-      this.setState({showLoginModal: !this.state.showLoginModal});
+  toggleModal = (modal) => {
+    if(modal !== undefined){
+      this.setState({
+        showModal: !this.state.showModal,
+        modal: modal.target.name
+      });
+    } else {
+      this.setState({
+        showModal: !this.state.showModal,
+        modal: this.state.modal
+      })
+    }
   }
 
   render() {
+
+    let ComponentModal = modals[this.state.modal];
+    let getModal = <ComponentModal toggleModal={this.toggleModal} showModal={this.state.showModal} />;
     return (
       <div>
-        <Navbar toggleLoginModal={this.toggleLoginModal} />
+        <Navbar toggleModal={this.toggleModal} />
         <div className="container">
-          <Login toggleLoginModal={this.toggleLoginModal} showLoginModal={this.state.showLoginModal} />
+          {getModal}
         </div>
       </div>
     );

@@ -12,7 +12,7 @@ import { Button,
 } from 'react-bootstrap';
 
 
-class Login extends Component {
+class SignUp extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -22,7 +22,7 @@ class Login extends Component {
       hidePasswordHelpBlock: "hidden"
     };
     this.email = null;
-    this.password = null;
+    this.password = [];
   }
 
   validateEmail = () =>{
@@ -81,7 +81,7 @@ class Login extends Component {
       );
     } else {
       if(!confirm('As informações de login não foram válidas, tentar novamente?')){
-        this.hideLoginModal();
+        this.hide();
       }
     }
   }
@@ -91,7 +91,7 @@ class Login extends Component {
       <div className="static-modal">
         <Modal bsSize="sm" show={this.props.showModal} onHide={this.hide}>
           <Modal.Header>
-            <Modal.Title>Login</Modal.Title>
+            <Modal.Title>SignUp</Modal.Title>
           </Modal.Header>
           <Modal.Body>
               <Grid componentClass={Form} horizontal fluid={true}>
@@ -116,6 +116,16 @@ class Login extends Component {
                       <FormControl.Feedback />
                       <HelpBlock className={this.state.hidePasswordHelpBlock}>Digite test para entrar</HelpBlock>
                     </FormGroup>
+                    <FormGroup validationState={ this.state.passwordValidationState }>
+                      <FormControl
+                        inputRef={(password) => { this.password = password; }}
+                        type="password"
+                        placeholder="Repita a senha"
+                        onChange={this.validatePassword}
+                      />
+                      <FormControl.Feedback />
+                      <HelpBlock className={this.state.hidePasswordHelpBlock}>Digite test para entrar</HelpBlock>
+                    </FormGroup>
                 </Col>
               </Grid>
           </Modal.Body>
@@ -129,4 +139,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default SignUp;
