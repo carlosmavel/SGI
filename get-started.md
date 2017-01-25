@@ -16,15 +16,22 @@ Para criar um novo app, rode:
 create-react-app sgi
 Referência
 
-React Installation Guide
-Create React App GitHub page
+ Distribuição de Tarefas
+
+View Inicial: Carlos
+  Descrição do sistema
+
+View Login: Fabio
+  Ir para view logado
+
+View Cadastro: Fabio
+  Ir para view logado
+
+View Logado: Alison e Isaque
+  Formulário de Pressao Arterial
+  Formulário de Glicemia
+
+  Configurar retorno após submit do form
 
 
-<!-- Bootstrap -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+View Consulta de dados Enviados;
