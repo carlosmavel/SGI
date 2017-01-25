@@ -1,7 +1,9 @@
 // src/Navbar.js
 import React, { Component } from 'react';
 
+
 class Navbar extends Component {
+
   render() {
     return(
       <nav className="navbar navbar-inverse navbar-static-top">
@@ -23,7 +25,7 @@ class Navbar extends Component {
           <div className="collapse navbar-collapse" id="app-navbar-collapse">
             <ul className="nav navbar-nav navbar-right">
               <li><a href="#"><span className="glyphicon glyphicon-user"></span> Sign Up</a></li>
-              <li><a href="#"><span className="glyphicon glyphicon-log-in"></span> Login</a></li>
+              <li><a  onClick={this.props.toggleLoginModal} href="#" ><span className="glyphicon glyphicon-log-in"></span> Login</a></li>
             </ul>
           </div>
         </div>
