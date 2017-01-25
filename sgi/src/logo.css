@@ -1,5 +1,7 @@
 .logoSize{
+  float:left;
   height: 30px;
   width: 30px;
+  margin-top: -5px;
   margin-right: 10px;
 }

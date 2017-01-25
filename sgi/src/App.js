@@ -41,7 +41,7 @@ class App extends Component {
   }
 
   render(){
-    let ComponentModal = modals[this.state.modal];
+    let ComponentModal = modals[this.state.modal?this.state.modal:"login"];
     let getModal = <ComponentModal toggleModal={this.toggleModal} showModal={this.state.showModal} />;
     return (
       <div>

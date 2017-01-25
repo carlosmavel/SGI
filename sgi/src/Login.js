@@ -81,7 +81,7 @@ class Login extends Component {
       );
     } else {
       if(!confirm('As informações de login não foram válidas, tentar novamente?')){
-        this.hideLoginModal();
+        this.hide();
       }
     }
   }
