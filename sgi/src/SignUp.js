@@ -22,7 +22,7 @@ class SignUp extends Component {
       hidePasswordHelpBlock: "hidden"
     };
     this.email = null;
-    this.password = [];
+    this.password = null;
   }
 
   validateEmail = () =>{
@@ -120,7 +120,7 @@ class SignUp extends Component {
                       <FormControl
                         inputRef={(password) => { this.password = password; }}
                         type="password"
-                        placeholder="Repita a senha"
+                        placeholder="Repita a senha novamente"
                         onChange={this.validatePassword}
                       />
                       <FormControl.Feedback />

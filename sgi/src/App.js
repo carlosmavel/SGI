@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import Navbar from './Navbar';
-
 import Login from './Login.js';
 import SignUp from './SignUp.js'
 
+
+import InitialNavbar from './InitialNavbar.js';
+import InitialContainer from './InitialContainer.js';
 
 
 const modals = {
@@ -39,19 +40,21 @@ class App extends Component {
     }
   }
 
-  render() {
-
+  render(){
     let ComponentModal = modals[this.state.modal];
     let getModal = <ComponentModal toggleModal={this.toggleModal} showModal={this.state.showModal} />;
     return (
       <div>
-        <Navbar toggleModal={this.toggleModal} />
-        <div className="container">
+        <InitialNavbar toggleModal={this.toggleModal} />
+        <InitialContainer>
           {getModal}
-        </div>
+        </InitialContainer>
       </div>
     );
+
   }
+
+
 }
 
 export default App;

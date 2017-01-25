@@ -1,9 +1,8 @@
-// src/Navbar.js
+// src/logadoapp/Navbar.js
 import React, { Component } from 'react';
 
 
 class Navbar extends Component {
-
   render() {
     return(
       <nav className="navbar navbar-inverse navbar-static-top">
@@ -15,6 +14,7 @@ class Navbar extends Component {
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
               </button>
+
               <a className="navbar-brand" href="#">
                 <p>Logo</p>
               </a>
@@ -24,12 +24,18 @@ class Navbar extends Component {
           </div>
           <div className="collapse navbar-collapse" id="app-navbar-collapse">
             <ul className="nav navbar-nav navbar-right">
-              <li><a name='signUp' onClick={this.props.toggleModal} href="#"><span className="glyphicon glyphicon-user"></span> SignUp</a></li>
-              <li><a name='login' onClick={this.props.toggleModal} href="#" ><span className="glyphicon glyphicon-log-in"></span> Login</a></li>
+              <li><a href="#"><span className="glyphicon glyphicon-user"></span> Sign Up</a></li>
+              <li><a href="#"><span className="glyphicon glyphicon-log-in"></span> Login</a></li>
             </ul>
           </div>
         </div>
-      </nav>
+        </nav>
+
+
+
+
+
+
     );
   }
 }
