@@ -10,6 +10,7 @@ class Jumbotron extends Component {
           <h1>Informe a Presssão Arterial</h1>
             <div className="row">
             <FormPress />
+            
 
 	         
             </div>

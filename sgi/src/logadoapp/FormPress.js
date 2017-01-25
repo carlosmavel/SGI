@@ -21,6 +21,7 @@ class FormPress extends Component {
                   className="form-control"
                   placeholder="Ex: 120 mmHg"
                  />
+                 
              
 
                 <label>Pressão Arterial Mínima</label>

@@ -6,6 +6,7 @@ class Info extends Component {
     return(
 
     	<h4>
+    	
 	      <span className="label label-info"> Costuma chamar de
 		       12/8 (12 por 8), mas na verdade, a forma correta 
 		       é 120/80 (120 por 80), pois este é o valor da pressão
