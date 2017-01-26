@@ -12,6 +12,7 @@ import InitialContainer from './InitialContainer.js';
 import LoggedView from './LoggedView.js';
 
 
+
 const modals = {
   login: Login,
   signUp: SignUp
@@ -60,6 +61,7 @@ class App extends Component {
             <InitialContainer>
               {getModal}
             </InitialContainer>
+
           </div>
         );
         break;
