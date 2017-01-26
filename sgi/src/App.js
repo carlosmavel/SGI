@@ -25,7 +25,6 @@ class App extends Component {
 
 
   render(){
-
     return this.pages[this.state.page];
   }
 
