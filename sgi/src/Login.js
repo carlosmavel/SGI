@@ -82,4 +82,11 @@ class Login extends Component {
   }
 }
 
+  var users = [
+      {"id":1,"email":"carlos@teste.com","password":"abc12345"},
+      {"id":2,"email":"fabio@teste.com","password":"abc12345"},
+      {"id":3,"email":"isaque@teste.com","password":"abc12345"},
+      {"id":4,"email":"alisson@teste.com","password":"abc12345"}
+    ];
+
 export default Login;
