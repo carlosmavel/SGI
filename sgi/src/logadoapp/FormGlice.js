@@ -7,14 +7,14 @@ import React, { Component } from 'react';
   console.log(this.refs.arterialMini.value);
 }*/
 
-class FormPress extends Component {
+class FormGlice extends Component {
   render() {
     return(
 
        <form onSubmit={this.handleSubmit}>
 
               <div className="form-group">
-                <label>Pressão Arterial Máxima/Mínima </label>
+                <label>informe o resultado do teste de Glicemia </label>
                 <input
                   type="text"
                   ref="ArterialMaxi"
@@ -36,4 +36,4 @@ class FormPress extends Component {
   }
 }
 
-export default FormPress;
+export default FormGlice;

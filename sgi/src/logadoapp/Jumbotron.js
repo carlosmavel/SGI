@@ -7,10 +7,10 @@ class Jumbotron extends Component {
     return(
 
         <div className="jumbotron">
-          <h1>Informe a Presssão Arterial</h1>
+          <h2>Informe a Presssão Arterial</h2>
             <div className="row">
             <FormPress />
-            
+
 
 	         
             </div>
