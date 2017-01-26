@@ -44,15 +44,8 @@ class Login extends Component {
 
   submit = () => {
     if(this.finalValidation()){
-      console.log(
-        "Email: "
-        + this.email.value
-        + "\nSenha: "
-        + this.password.value
-      );
 
       if(this.checkUser()){
-        console.log("Achou usuario");
         this.props.setPage("logged");
       }
     } else {
@@ -64,9 +57,7 @@ class Login extends Component {
 
   checkUser = () => {
     for(let user of users){
-    console.log("Verificando usuario");
       if(user.email === this.email.value && user.password === this.password.value){
-        console.log("usuario encontrado");
         return true;
       }
     }
