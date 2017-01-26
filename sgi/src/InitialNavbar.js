@@ -21,7 +21,6 @@ class InitialNavbar extends Component {
             <Nav pullRight>
               <NavItem name='signUp' onClick={this.props.toggleModal} eventKey={1} href="#"><Glyphicon glyph="user"/> Sign Up</NavItem>
               <NavItem name='login' onClick={this.props.toggleModal} eventKey={2} href="#"><Glyphicon glyph="log-in"/> Login</NavItem>
-              <NavItem eventKey={3} href="#"><Glyphicon glyph="lock"/> Área Restrita</NavItem>
             </Nav>
           </Navbar.Collapse>
         </Navbar>

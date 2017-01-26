@@ -5,10 +5,10 @@ class InitialTextDescription extends Component{
   render(){
     return(
       <div>
-        <p>Uma ferramenta de interação entre Paciente e Instituição de Saúde</p>
+        <p>Interação entre Paciente e Unidade de Saúde</p>
         <p>Controle de Aferição de Pressão Arterial</p>
         <p>Controle de Teste Glicêmico</p>
-        <p>Envio automático para a Instituição Cadastrada ou Médico Cadastrado</p>
+        <p>Envio automático para a Unidade de Saúde Cadastrada ou Médico Cadastrado</p>
         <p>Integração com o Prontuário Eletrônico do Paciente</p>
       </div>
     );
