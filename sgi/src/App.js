@@ -12,6 +12,7 @@ import InitialContainer from './InitialContainer.js';
 import LoggedView from './LoggedView.js';
 
 
+
 const modals = {
   login: Login,
   signUp: SignUp
@@ -29,6 +30,11 @@ class App extends Component {
     };
   }
 
+  setPage = (page) => {
+    this.setState({
+      page: page
+    });
+  }
 
   toggleModal = (modal) => {
     if(modal !== undefined){
@@ -48,20 +54,22 @@ class App extends Component {
     switch (this.state.page) {
       case "initial":
         let ComponentModal = modals[this.state.modal?this.state.modal:"login"];
-        let getModal = <ComponentModal toggleModal={this.toggleModal} showModal={this.state.showModal} />;
+        let getModal = <ComponentModal toggleModal={this.toggleModal} showModal={this.state.showModal} setPage={this.setPage} />;
+
         return (
           <div>
             <InitialNavbar toggleModal={this.toggleModal} />
             <InitialContainer>
               {getModal}
             </InitialContainer>
+
           </div>
         );
         break;
 
       case "logged":
         return (
-          <LoggedView />
+          <LoggedView setPage={this.setPage} />
         );
         break;
     }

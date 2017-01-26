@@ -9,7 +9,7 @@ import { Glyphicon, Nav, Navbar, NavItem } from 'react-bootstrap';
 class LoggedNavbar extends Component {
   render(){
       return(
-        <Navbar staticTop inverse collapseOnSelect >
+        <Navbar staticTop inverse collapseOnSelect onSelect={this.props.setPage} >
           <Navbar.Header>
             <Navbar.Brand>
               <a href="home" title="Sistema de Gerenciamento de Indicadores"><Logo />SGI</a>
@@ -18,7 +18,7 @@ class LoggedNavbar extends Component {
           </Navbar.Header>
           <Navbar.Collapse>
             <Nav pullRight>
-              <NavItem name='logout' eventKey={2} href="#"><Glyphicon glyph="log-out"/> Logout</NavItem>
+              <NavItem name='logout' eventKey={"initial"} href="#"><Glyphicon glyph="log-out"/> Logout</NavItem>
             </Nav>
           </Navbar.Collapse>
         </Navbar>

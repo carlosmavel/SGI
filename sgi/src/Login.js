@@ -50,6 +50,7 @@ class Login extends Component {
         + "\nSenha: "
         + this.password.value
       );
+      this.props.setPage("logged");
     } else {
       if(!confirm('As informações de login não foram válidas, tentar novamente?')){
         this.hide();
