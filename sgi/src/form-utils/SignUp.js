@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import FormInput from './FormInput.js'
-import './Util.css';
+import '../Util.css';
 
 import { Button,
   Col,
@@ -50,12 +50,7 @@ class SignUp extends Component {
 
   submit = () => {
     if(this.finalValidation()){
-      console.log(
-        "Email: "
-        + this.email.value
-        + "\nSenha: "
-        + this.password.value
-      );
+      this.props.setPage("logged");
     } else {
       if(!confirm('As informações de login não foram válidas, tentar novamente?')){
         this.hide();

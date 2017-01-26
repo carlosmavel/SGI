@@ -1,22 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import Login from './Login.js';
-import SignUp from './SignUp.js'
-
-
-import InitialNavbar from './InitialNavbar.js';
-import InitialContainer from './InitialContainer.js';
-// import InitialView from './InitialView.js';
-
 import LoggedView from './LoggedView.js';
-
-
-const modals = {
-  login: Login,
-  signUp: SignUp
-};
-
+import InitialView from './InitialView.js'
 
 class App extends Component {
 
@@ -24,47 +10,23 @@ class App extends Component {
     super(props);
     this.state = {
       page: "initial",
-      showModal: false,
-      modal: "login",
     };
-  }
-
-
-  toggleModal = (modal) => {
-    if(modal !== undefined){
-      this.setState({
-        showModal: !this.state.showModal,
-        modal: modal.target.name
-      });
-    } else {
-      this.setState({
-        showModal: !this.state.showModal,
-        modal: this.state.modal
-      })
+    this.pages = {
+      "initial": <InitialView setPage={this.setPage} />,
+      "logged": <LoggedView setPage={this.setPage} />
     }
   }
+
+  setPage = (page) => {
+    this.setState({
+      page: page
+    });
+  }
+
 
   render(){
-    switch (this.state.page) {
-      case "initial":
-        let ComponentModal = modals[this.state.modal?this.state.modal:"login"];
-        let getModal = <ComponentModal toggleModal={this.toggleModal} showModal={this.state.showModal} />;
-        return (
-          <div>
-            <InitialNavbar toggleModal={this.toggleModal} />
-            <InitialContainer>
-              {getModal}
-            </InitialContainer>
-          </div>
-        );
-        break;
 
-      case "logged":
-        return (
-          <LoggedView />
-        );
-        break;
-    }
+    return this.pages[this.state.page];
   }
 
 

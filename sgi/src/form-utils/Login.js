@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 
 import FormInput from './FormInput.js';
-import './Util.css';
+
+import '../Util.css';
 
 import { Button,
   Col,
@@ -44,17 +45,28 @@ class Login extends Component {
 
   submit = () => {
     if(this.finalValidation()){
-      console.log(
-        "Email: "
-        + this.email.value
-        + "\nSenha: "
-        + this.password.value
-      );
+      if(this.checkUser()){
+        this.props.setPage("logged");
+      } else {
+        if(!confirm("Usuário não encontrado, tentar novamente?")){
+          this.hide();
+        }
+      }
     } else {
       if(!confirm('As informações de login não foram válidas, tentar novamente?')){
         this.hide();
       }
     }
+  }
+
+  checkUser = () => {
+    let users = require('../db/users.json').users;
+    for(let user of users){
+      if(user.email === this.email.value.trim() && user.password === this.password.value.trim()){
+        return true;
+      }
+    }
+    return false;
   }
 
 
@@ -82,11 +94,5 @@ class Login extends Component {
   }
 }
 
-  var users = [
-      {"id":1,"email":"carlos@teste.com","password":"abc12345"},
-      {"id":2,"email":"fabio@teste.com","password":"abc12345"},
-      {"id":3,"email":"isaque@teste.com","password":"abc12345"},
-      {"id":4,"email":"alisson@teste.com","password":"abc12345"}
-    ];
 
 export default Login;
