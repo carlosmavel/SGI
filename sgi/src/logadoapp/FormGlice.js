@@ -1,13 +1,35 @@
 // src/logadoapp/FormPress.js
 import React, { Component } from 'react';
 
-/*handleSubmit:function(e) {
-  e.preventDefault();
-  console.log(this.refs.ArterialMaxi.value);
-  console.log(this.refs.arterialMini.value);
-}*/
 
 class FormGlice extends Component {
+
+constructor(props) {
+  super(props);
+  this.state = {value: ''};
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+
+    var glicemia = this.state.value;
+   
+    if (glicemia <=100) {
+      alert('valor menor que 100 Normal: ' + this.state.value);
+    } else if (glicemia >100 && glicemia <=125) {
+      alert('valor maior que 100 e menor 125 Pre diabete: ' + this.state.value);
+    } else if (glicemia > 125) {
+      alert('valor maior que 126 Com Diabete: ' + this.state.value);
+    }
+  }
+
   render() {
     return(
 
@@ -16,10 +38,12 @@ class FormGlice extends Component {
               <div className="form-group">
                 <label>informe o resultado do teste de Glicemia </label>
                 <input
-                  type="text"
+                  type="number"
                   ref="ArterialMaxi"
                   className="form-control"
-                  placeholder="Ex: 120/80 mmHg"
+                  maxLength="3"
+                  value={this.state.value} onChange={this.handleChange}
+                  placeholder="Ex: 110 mg/dL"
                  />
 
                            
