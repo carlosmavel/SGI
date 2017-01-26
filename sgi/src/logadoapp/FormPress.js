@@ -38,19 +38,19 @@ class FormPress extends Component {
                 }
 
                 handleSubmit(event) {
+                  event.preventDefault();
 
-                  if (this.state.value<100) {
-                  alert('valor maior que 100 Hipertensão: ' + this.state.value);
-                  event.preventDefault();
-                   }
-                   if (this.state.value>100 && this.state.value<=140)  {
+                  var pressao = this.state.value.split("/");
+                  var max = Number.isInteger(pressao[0] / 10) && (pressao[0] != 10) ? pressao[0] / 10 : pressao[0];
+                  var min = Number.isInteger(pressao[1] / 10) ? pressao[1] / 10 : pressao[1];
+
+                  if (max < 10 && min <= 6) {
+                    alert('valor maior que 100 Hipertensão: ' + this.state.value);
+                  } else if (max >= 10 && max < 14 && min >= 6 && min < 9) {
                     alert('valor maior que 100 e menor 140 Normal: ' + this.state.value);
-                  event.preventDefault();
-                  }
-                  if (this.state.value>140 && this.state.value<=160)  {
+                  } else if (max >= 14 && max < 16 && min >= 9 && min < 10) {
                     alert('valor maior que 140 e menor 160 Hipertensão limite: ' + this.state.value);
-                  }
-                  if (this.state.value>160 && this.state.value<=180)  {
+                  } else if (max >= 16 && max < 18 && min >= 10 && min < 11)  {
                     alert('valor maior que 160 e menor 180 Hipertensão moderada: ' + this.state.value);
                   }
                 }
@@ -68,7 +68,10 @@ class FormPress extends Component {
                   maxlength="4"
                   ref="ArterialMaxi"
                   className="form-control"
+                  pattern="\d{1,3}\/\d{1,3}"
+                  title="Ex: 120/80 mmHg"
                   value={this.state.value} onChange={this.handleChange}
+
                   
                   placeholder="Ex: 120/80 mmHg"
                  />
