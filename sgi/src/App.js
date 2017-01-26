@@ -29,6 +29,10 @@ class App extends Component {
     };
   }
 
+  setLogado = () => {
+    this.setState({page: "logged"});
+  }
+
 
   toggleModal = (modal) => {
     if(modal !== undefined){
@@ -48,7 +52,8 @@ class App extends Component {
     switch (this.state.page) {
       case "initial":
         let ComponentModal = modals[this.state.modal?this.state.modal:"login"];
-        let getModal = <ComponentModal toggleModal={this.toggleModal} showModal={this.state.showModal} />;
+        let getModal = <ComponentModal toggleModal={this.toggleModal} showModal={this.state.showModal} setLogado={this.setLogado} />;
+
         return (
           <div>
             <InitialNavbar toggleModal={this.toggleModal} />

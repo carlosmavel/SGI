@@ -44,17 +44,26 @@ class Login extends Component {
 
   submit = () => {
     if(this.finalValidation()){
-      console.log(
-        "Email: "
-        + this.email.value
-        + "\nSenha: "
-        + this.password.value
-      );
+      if(this.checkUser()){
+        console.log("Achou usuario");
+        this.props.setLogado();
+      }
     } else {
       if(!confirm('As informações de login não foram válidas, tentar novamente?')){
         this.hide();
       }
     }
+  }
+
+  checkUser = () => {
+    for(let user of users){
+    console.log("Verificando usuario");
+      if(user.email === this.email.value && user.password === this.password.value){
+        console.log("usuario encontrado");
+        return true;
+      }
+    }
+    return false;
   }
 
 
@@ -82,11 +91,15 @@ class Login extends Component {
   }
 }
 
+
+
   var users = [
       {"id":1,"email":"carlos@teste.com","password":"abc12345"},
       {"id":2,"email":"fabio@teste.com","password":"abc12345"},
       {"id":3,"email":"isaque@teste.com","password":"abc12345"},
       {"id":4,"email":"alisson@teste.com","password":"abc12345"}
     ];
+
+
 
 export default Login;
