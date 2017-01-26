@@ -9,26 +9,12 @@ class Jumbotron extends Component {
         <div className="jumbotron">
           <h2>Informe a Presssão Arterial</h2>
             <div className="row">
-            <FormPress />
-
-
-	         
+              <FormPress />
+         
             </div>
         </div>
 
-		
-		      
-
-
-				     
-		    
-
-
-
-			
-
-
-    	);
+		);
   }
 }
 
