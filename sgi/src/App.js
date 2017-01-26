@@ -7,6 +7,9 @@ import SignUp from './SignUp.js'
 
 import InitialNavbar from './InitialNavbar.js';
 import InitialContainer from './InitialContainer.js';
+// import InitialView from './InitialView.js';
+
+import LoggedView from './LoggedView.js';
 
 
 const modals = {
@@ -20,6 +23,7 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
+      page: "initial",
       showModal: false,
       modal: "login",
     };
@@ -41,17 +45,26 @@ class App extends Component {
   }
 
   render(){
-    let ComponentModal = modals[this.state.modal?this.state.modal:"login"];
-    let getModal = <ComponentModal toggleModal={this.toggleModal} showModal={this.state.showModal} />;
-    return (
-      <div>
-        <InitialNavbar toggleModal={this.toggleModal} />
-        <InitialContainer>
-          {getModal}
-        </InitialContainer>
-      </div>
-    );
+    switch (this.state.page) {
+      case "initial":
+        let ComponentModal = modals[this.state.modal?this.state.modal:"login"];
+        let getModal = <ComponentModal toggleModal={this.toggleModal} showModal={this.state.showModal} />;
+        return (
+          <div>
+            <InitialNavbar toggleModal={this.toggleModal} />
+            <InitialContainer>
+              {getModal}
+            </InitialContainer>
+          </div>
+        );
+        break;
 
+      case "logged":
+        return (
+          <LoggedView />
+        );
+        break;
+    }
   }
 
 
