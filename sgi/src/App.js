@@ -29,7 +29,7 @@ class App extends Component {
       modal: "login",
     };
   }
-
+  
   setPage = (page) => {
     this.setState({
       page: page
