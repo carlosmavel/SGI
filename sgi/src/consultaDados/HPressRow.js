@@ -26,7 +26,7 @@ class HPressRow extends Component {
 		} else if (max >= 14 && max < 16 && min >= 9 && min < 10) {
 			classi = "Hipertensão limite";
 			style = "success";
-		} else if (max >= 16 && max < 18 && min >= 10 && min < 11)  {
+		} else if (max >= 16 && max <= 18 && min >= 10 && min <= 11)  {
 			classi = "Hipertensão moderada";
 			style = "warning";
 		}
