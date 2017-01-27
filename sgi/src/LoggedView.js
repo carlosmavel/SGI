@@ -6,7 +6,7 @@ import LoggedNavbar from './LoggedNavbar';
 import LoggedContainer from './LoggedContainer';
 
 import HomeLogged from './HomeLogged';
-import HPressLogged from './HPressLogged';
+import ConsultaDadosCadastrados from './consultaDados/ConsultaDadosCadastrados';
 import HGlicoLogged from './HGlicoLogged';
 import Jumbotron from './logadoapp/Jumbotron';
 import JumboGlice from './logadoapp/JumboGlice';
@@ -21,7 +21,7 @@ class LoggedView extends Component {
 		};
 		this.views = {
 			initial: <HomeLogged />,
-			h_press: <HPressLogged />,
+			h_press: <ConsultaDadosCadastrados />,
 			h_glice: <HGlicoLogged />,
 			i_press: <Jumbotron />,
 			i_glice: <JumboGlice />
