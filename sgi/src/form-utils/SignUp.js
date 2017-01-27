@@ -65,7 +65,7 @@ class SignUp extends Component {
     let ids = users.map((user)=>{
       return user.id;
     });
-    ids.sort();
+    ids.sort((a,b)=>{return a - b;});
     this.userId = ids[ids.length - 1 ] + 1;
     users.push({
       "id": this.userId,

@@ -26,7 +26,7 @@ constructor(props) {
     let ids = dados.map((dado) => {
       return dado.id;
     });
-		ids.sort();
+		ids.sort((a,b)=>{return a - b;});
 		let d = new Date();
 		dados.push({
 			"id": ids[ids.length - 1] + 1,

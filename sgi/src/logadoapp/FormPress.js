@@ -28,7 +28,9 @@ class FormPress extends Component {
 		let ids = dados.map((dado) => {
 			return dado.id;
 		});
-		ids.sort();
+		ids.sort((a,b)=>{return a - b;});
+		console.log(ids);
+		console.log(ids[ids.length - 1] + 1);
 		let d = new Date();
 		dados.push({
 			"id": ids[ids.length - 1] + 1,
