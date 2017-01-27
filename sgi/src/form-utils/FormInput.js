@@ -25,7 +25,7 @@ class FormInput extends Component {
       case "email":
         this.type = "email";
         this.instructions = this.validateUserName;
-        this.placeholder = "Digite o email cadastrado";
+        this.placeholder = "Digite o email";
         break;
       case "password":
         this.type = "password";

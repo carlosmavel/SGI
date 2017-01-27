@@ -3,13 +3,9 @@ import React, { Component } from 'react';
 
 import { Grid, Row, Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 
-import SystemDescription from './SystemDescription';
+//import SystemDescription from './SystemDescription';
 
 class LoggedContainer extends Component {
-
-	constructor(props) {
-		super(props);
-	}
 
 	handleSelect = (eventKey) => {
 		if (eventKey)

@@ -4,10 +4,10 @@ import '../Util.css';
 import * as fs from 'fs-web';
 
 import { Button,
-  Col,
-  Grid,
-  Form,
-  Modal
+	Col,
+	Grid,
+	Form,
+	Modal
 } from 'react-bootstrap';
 
 
@@ -16,7 +16,7 @@ class SignUp extends Component {
     super(props);
     this.email = null;
     this.password = null;
-    this.userID = null;
+    this.userId = null;
 
     this.inputConfigs = [
           { type: "email", setValue: this.setEmail },
@@ -66,15 +66,15 @@ class SignUp extends Component {
       return user.id;
     });
     ids.sort();
-    this.userID = ids[ids.lenght -1] + 1;
+    this.userId = ids[ids.lenght -1] + 1;
     users.push({
-      "id": this.userID,
+      "id": this.userId,
       "email": this.email.value,
       "password": this.password.value
     });
     fs.writeFile(filePath,users)
     .then(()=>{
-      this.props.setUserID(this.userID);
+      this.props.setUserId(this.userId);
       this.props.setPage("logged");
     }
     ,()=>{

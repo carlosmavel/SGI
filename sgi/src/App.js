@@ -10,11 +10,11 @@ class App extends Component {
     super(props);
     this.state = {
       page: "initial",
-      userID: 0
+      userId: 0,
     };
     this.pages = {
-      "initial": <InitialView setPage={this.setPage} setUserID={this.setUserID} />,
-      "logged": <LoggedView setPage={this.setPage} userID={this.state.userID} />
+      "initial": <InitialView setPage={this.setPage} setUserId={this.setUserId} />,
+      "logged": <LoggedView setPage={this.setPage} userId={this.getUserId} />
     }
   }
 
@@ -23,10 +23,13 @@ class App extends Component {
       page: page
     });
   }
-  setUserID = (id) => {
+  setUserId = (id) => {
     this.setState({
-      userID: id
+      userId: id
     });
+  }
+  getUserId = () => {
+    return this.state.userId;
   }
 
 

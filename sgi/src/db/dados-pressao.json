@@ -1,20 +1,20 @@
 {
   "pressao": [
-    {"id": 1, "userId": 1, "pressao": "12/8"},
-    {"id": 2, "userId": 1, "pressao": "14/9"},
-    {"id": 3, "userId": 1, "pressao": "16/10"},
-    {"id": 4, "userId": 1, "pressao": "18/11"},
-    {"id": 5, "userId": 2, "pressao": "12/8"},
-    {"id": 6, "userId": 2, "pressao": "14/9"},
-    {"id": 7, "userId": 2, "pressao": "16/10"},
-    {"id": 8, "userId": 2, "pressao": "18/11"},
-    {"id": 9, "userId": 3, "pressao": "12/8"},
-    {"id": 10, "userId": 3, "pressao": "14/9"},
-    {"id": 11, "userId": 3, "pressao": "16/10"},
-    {"id": 12, "userId": 3, "pressao": "18/11"},
-    {"id": 13, "userId": 4, "pressao": "12/8"},
-    {"id": 14, "userId": 4, "pressao": "14/9"},
-    {"id": 15, "userId": 4, "pressao": "16/10"},
-    {"id": 16, "userId": 4, "pressao": "18/11"}
+    {"id": 1, "userId": 1, "pressao": "12/8", "data": "07/20/2003"},
+    {"id": 2, "userId": 1, "pressao": "14/9", "data": "08/20/1990"},
+    {"id": 3, "userId": 1, "pressao": "16/10", "data": "08/20/1990"},
+    {"id": 4, "userId": 1, "pressao": "18/11", "data": "08/20/1990"},
+    {"id": 5, "userId": 2, "pressao": "12/8", "data": "08/20/1990"},
+    {"id": 6, "userId": 2, "pressao": "14/9", "data": "08/20/1990"},
+    {"id": 7, "userId": 2, "pressao": "16/10", "data": "08/20/1990"},
+    {"id": 8, "userId": 2, "pressao": "18/11", "data": "08/20/1990"},
+    {"id": 9, "userId": 3, "pressao": "12/8", "data": "08/20/1990"},
+    {"id": 10, "userId": 3, "pressao": "14/9", "data": "08/20/1990"},
+    {"id": 11, "userId": 3, "pressao": "16/10", "data": "08/20/1990"},
+    {"id": 12, "userId": 3, "pressao": "18/11", "data": "08/20/1990"},
+    {"id": 13, "userId": 4, "pressao": "12/8", "data": "08/20/1990"},
+    {"id": 14, "userId": 4, "pressao": "14/9", "data": "08/20/1990"},
+    {"id": 15, "userId": 4, "pressao": "16/10", "data": "08/20/1990"},
+    {"id": 16, "userId": 4, "pressao": "18/11", "data": "08/20/1990"}
   ]
 }
