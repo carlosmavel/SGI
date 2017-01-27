@@ -30,12 +30,12 @@ class FormInput extends Component {
       case "password":
         this.type = "password";
         this.instructions = this.validatePassword;
-        this.placeholder = "Digite uma senha";
+        this.placeholder = "Digite a senha";
         break;
       case "doublePassword":
         this.type = "password";
         this.instructions = this.validateDoublePassword;
-        this.placeholder = "Repita a senha";
+        this.placeholder = "Digite a senha";
         break;
       default:
         console.log("Invalid Type");
@@ -60,7 +60,7 @@ class FormInput extends Component {
   }
 
   validateUserName = (userInput) => {
-    let rgx = /([\w.]+@[\w]+.[\w.]+)/g;
+    let rgx = /([\w.]+@[\w]+[.][\w.]+)/g;
     this.value = rgx.exec(userInput);
     if(this.value !== null){
       this.props.setValue(this.input);

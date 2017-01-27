@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-
 import FormInput from './FormInput.js'
 import '../Util.css';
+import * as fs from 'fs-web';
 
 import { Button,
   Col,
@@ -9,6 +9,7 @@ import { Button,
   Form,
   Modal
 } from 'react-bootstrap';
+
 
 class SignUp extends Component {
   constructor(props){
@@ -45,16 +46,47 @@ class SignUp extends Component {
 
 
   finalValidation = () => {
-    return (this.email && this.password && (this.password === this.doublePassword));
+    return (
+      this.email &&
+      this.password &&
+      this.doublePassword &&
+      (this.password.value === this.doublePassword.value)
+    );
   }
+
+  saveUser = () => {
+    let filePath = '../db/users.json';
+    let users = require('../db/users.json').users;
+    let ids = users.map((user)=>{
+      return user.id;
+    });
+    ids.sort();
+    users.push({
+      "id": ids[ids.lenght -1] + 1,
+      "email": this.email.value,
+      "password": this.password.value
+    });
+    fs.writeFile(filePath,users)
+    .then(()=>{
+      this.props.setPage("logged");
+    }
+    ,()=>{
+      this.showError();
+    });
+  }
+
+  showError = () => {
+    if(!confirm('As informações de login não foram válidas, tentar novamente?')){
+      this.hide();
+    }
+  }
+
 
   submit = () => {
     if(this.finalValidation()){
-      this.props.setPage("logged");
+      this.saveUser();
     } else {
-      if(!confirm('As informações de login não foram válidas, tentar novamente?')){
-        this.hide();
-      }
+      this.showError();
     }
   }
 
@@ -73,8 +105,8 @@ class SignUp extends Component {
               </Grid>
           </Modal.Body>
           <Modal.Footer>
-            <Button onClick={this.hide} > Close </Button>
-            <Button onClick={this.submit} bsStyle="primary" > Login </Button>
+            <Button onClick={this.hide} > Fechar </Button>
+            <Button onClick={this.submit} bsStyle="primary" > Cadastrar </Button>
           </Modal.Footer>
         </Modal>
       </div>
