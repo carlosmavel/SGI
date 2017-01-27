@@ -3,23 +3,44 @@ import React, { Component } from 'react';
 
 import { Grid, Row, Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 
+import HomeLogged from './HomeLogged';
+import HPressLogged from './consultaDados/HPressLogged';
+import HGliceLogged from './consultaDados/HGliceLogged';
+import Jumbotron from './logadoapp/Jumbotron';
+import JumboGlice from './logadoapp/JumboGlice';
+
 //import SystemDescription from './SystemDescription';
 
 class LoggedContainer extends Component {
 
-	handleSelect = (eventKey) => {
-		if (eventKey)
-			this.props.setView(eventKey);
+	constructor(props) {
+		super(props);
+		this.state = {
+			view: "initial"
+		};
+		this.views = {
+			initial: <HomeLogged userId={this.props.userId} />,
+			h_press: <HPressLogged userId={this.props.userId} />,
+			h_glice: <HGliceLogged userId={this.props.userId} />,
+			i_press: <Jumbotron setView={this.setView} userId={this.props.userId} />,
+			i_glice: <JumboGlice setView={this.setView} userId={this.props.userId} />
+		}
 	}
-	
+
+	setView = (view) => {
+		this.setState({
+			view: view
+		});
+	}
+
 	render(){
 		return(
 			<Grid>
 				<Row>
-					<Navbar onSelect={this.handleSelect}>
+					<Navbar onSelect={this.setView}>
 						<Navbar.Header>
 							<Navbar.Brand>
-								<a href="#">Início</a>
+								<a href="#" onClick={()=>{this.setView("initial")}}>Início</a>
 							</Navbar.Brand>
 						</Navbar.Header>
 						<Nav>
@@ -33,7 +54,7 @@ class LoggedContainer extends Component {
 					</Navbar>
 				</Row>
 				<Row>
-					{this.props.theView}
+					{this.views[this.state.view]}
 				</Row>
 			</Grid>
 		);

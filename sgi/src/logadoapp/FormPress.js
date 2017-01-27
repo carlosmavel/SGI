@@ -20,8 +20,8 @@ class FormPress extends Component {
 		event.preventDefault();
 
 		var pressao = this.state.value.split("/");
-		var max = Number.isInteger(pressao[0] / 10) && (pressao[0] !== 10) ? pressao[0] / 10 : pressao[0];
-		var min = Number.isInteger(pressao[1] / 10) ? pressao[1] / 10 : pressao[1];
+		var max = (Number(pressao[0]) !== 10) && Number.isInteger(pressao[0] / 10) ? pressao[0] / 10 : pressao[0];
+		var min = (Number(pressao[1]) !== 10) && Number.isInteger(pressao[1] / 10) ? pressao[1] / 10 : pressao[1];
 
 		let filePath = '../db/dados-pressao.json';
 		let dados = require('../db/dados-pressao.json').pressao;
@@ -46,7 +46,7 @@ class FormPress extends Component {
 						alert('Valor maior que 100 e menor 140, classificação: NORMAL (' + this.state.value + ')');
 					} else if (max >= 14 && max < 16 && min >= 9 && min < 10) {
 						alert('Valor maior que 140 e menor 160, classificação: HIPERTENSÃO LIMITE (' + this.state.value + ')');
-					} else if (max >= 16 && max < 18 && min >= 10 && min < 11)  {
+					} else if (max >= 16 && max <= 18 && min >= 10 && min < 11)  {
 						alert('Valor maior que 160 e menor 180, classificação: HIPERTENSÃO MODERADA (' + this.state.value + ')');
 					}
 
