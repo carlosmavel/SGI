@@ -37,11 +37,11 @@ constructor(props) {
       .then(
         () => {
           if (glicemia <=100) {
-            alert('Valor menor que 100, classificação Normal (' + this.state.value + ')');
+            alert('Valor menor que 100, classificação NORMAL (' + this.state.value + ')');
           } else if (glicemia >100 && glicemia <=125) {
-            alert('Valor maior que 100 e menor 125, classificação: pre diabete (' + this.state.value + ')');
+            alert('Valor maior que 100 e menor 125, classificação: PRE DIABETE (' + this.state.value + ')');
           } else if (glicemia > 125) {
-            alert('Valor maior que 126, classificação: com diabete (' + this.state.value + ')');
+            alert('Valor maior que 126, classificação: COM DIABETE (' + this.state.value + ')');
           }
 
           this.props.setView("h_glice");

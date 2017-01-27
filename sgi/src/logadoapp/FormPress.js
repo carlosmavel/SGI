@@ -44,13 +44,13 @@ class FormPress extends Component {
 				() => {
 
 					if (max < 10 && min <= 6) {
-						alert('valor maior que 100 Hipertensão: ' + this.state.value);
+						alert('Valor maior que 100, classificação: HIPERTENSÃO (' + this.state.value + ')');
 					} else if (max >= 10 && max < 14 && min >= 6 && min < 9) {
-						alert('valor maior que 100 e menor 140 Normal: ' + this.state.value);
+						alert('Valor maior que 100 e menor 140, classificação: NORMAL (' + this.state.value + ')');
 					} else if (max >= 14 && max < 16 && min >= 9 && min < 10) {
-						alert('valor maior que 140 e menor 160 Hipertensão limite: ' + this.state.value);
+						alert('Valor maior que 140 e menor 160, classificação: HIPERTENSÃO LIMITE (' + this.state.value + ')');
 					} else if (max >= 16 && max < 18 && min >= 10 && min < 11)  {
-						alert('valor maior que 160 e menor 180 Hipertensão moderada: ' + this.state.value);
+						alert('Valor maior que 160 e menor 180, classificação: HIPERTENSÃO MODERADA (' + this.state.value + ')');
 					}
 
 					this.props.setView("h_press");
