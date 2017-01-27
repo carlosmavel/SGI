@@ -29,6 +29,9 @@ class HPressLogged extends Component {
 
 		const rows = [];
 		let coletaPressao = require('../db/dados-pressao.json').pressao;
+		coletaPressao.sort((a, b) => {
+			return new Date(b.data) - new Date(a.data);
+		});
 		coletaPressao.forEach(pressao => {
 			rows.push(
 				<HPressRow
