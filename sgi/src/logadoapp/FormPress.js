@@ -37,7 +37,7 @@ class FormPress extends Component {
 			"id": ids.length + 1,
 			"userId": 1,
 			"pressao": (max+"/"+min),
-			"data": d.getDate()+"/"+(d.getMonth()+1)+"/"+d.getFullYear()
+			"data": d.toDateString()
 		});
 		fs.writeFile(filePath, dados)
 			.then(

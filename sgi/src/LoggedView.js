@@ -7,7 +7,7 @@ import LoggedContainer from './LoggedContainer';
 
 import HomeLogged from './HomeLogged';
 import HPressLogged from './consultaDados/HPressLogged';
-import HGliceLogged from './HGliceLogged';
+import HGliceLogged from './consultaDados/HGliceLogged';
 import Jumbotron from './logadoapp/Jumbotron';
 import JumboGlice from './logadoapp/JumboGlice';
 
@@ -24,7 +24,7 @@ class LoggedView extends Component {
 			h_press: <HPressLogged />,
 			h_glice: <HGliceLogged />,
 			i_press: <Jumbotron setView={this.setView}/>,
-			i_glice: <JumboGlice />
+			i_glice: <JumboGlice setView={this.setView} />
 		}
 	}
 

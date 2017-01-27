@@ -1,0 +1,20 @@
+{
+  "glicemia": [
+    {"id": 1, "userId": 1, "glicemia": "80", "data": "07/20/2003"},
+    {"id": 2, "userId": 1, "glicemia": "90", "data": "06/20/2003"},
+    {"id": 3, "userId": 1, "glicemia": "100", "data": "03/20/2003"},
+    {"id": 4, "userId": 1, "glicemia": "110", "data": "04/20/2003"},
+    {"id": 5, "userId": 2, "glicemia": "115", "data": "01/20/2003"},
+    {"id": 6, "userId": 2, "glicemia": "120", "data": "05/20/2003"},
+    {"id": 7, "userId": 2, "glicemia": "125", "data": "02/20/2003"},
+    {"id": 8, "userId": 2, "glicemia": "130", "data": "07/20/2003"},
+    {"id": 9, "userId": 3, "glicemia": "135", "data": "07/20/2003"},
+    {"id": 10, "userId": 3, "glicemia": "140", "data": "01/02/2003"},
+    {"id": 11, "userId": 3, "glicemia": "120", "data": "07/20/2003"},
+    {"id": 12, "userId": 3, "glicemia": "115", "data": "07/20/2003"},
+    {"id": 13, "userId": 4, "glicemia": "105", "data": "07/20/2003"},
+    {"id": 14, "userId": 4, "glicemia": "125", "data": "07/20/2003"},
+    {"id": 15, "userId": 4, "glicemia": "110", "data": "07/20/2003"},
+    {"id": 16, "userId": 4, "glicemia": "95", "data": "07/20/2003"}
+  ]
+}

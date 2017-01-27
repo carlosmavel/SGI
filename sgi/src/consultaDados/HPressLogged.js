@@ -33,7 +33,7 @@ class HPressLogged extends Component {
 			rows.push(
 				<HPressRow
 					key={pressao.id}
-					userId={pressao.userId}
+					// userId={pressao.userId}
 					pressao={pressao.pressao}
 					data={pressao.data}
 				/>
@@ -46,6 +46,7 @@ class HPressLogged extends Component {
 					<tr>
 						<th>Data</th>
 						<th>Pressão</th>
+						<th>Classificação</th>
 					</tr>
 				</thead>
 				<tbody>

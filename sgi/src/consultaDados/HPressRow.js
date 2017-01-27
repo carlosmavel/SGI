@@ -10,10 +10,27 @@ class HPressRow extends Component {
   			data
   		} = this.props;
 
+		let pre = pressao.split("/");
+		let max = Number.isInteger(pre[0] / 10) && (pre[0] !== 10) ? pre[0] / 10 : pre[0];
+		let min = Number.isInteger(pre[1] / 10) ? pre[1] / 10 : pre[1];
+
+  		let estado;
+
+  		if (max < 10 && min <= 6) {
+  			estado = "Hipertensão";
+		} else if (max >= 10 && max < 14 && min >= 6 && min < 9) {
+			estado = "Normal";
+		} else if (max >= 14 && max < 16 && min >= 9 && min < 10) {
+			estado = "Hipertensão limite";
+		} else if (max >= 16 && max < 18 && min >= 10 && min < 11)  {
+			estado = "Hipertensão moderada";
+		}
+
 		return(
 			<tr>
-				<td>{data}</td>
+				<td>{new Date(data).toLocaleDateString()}</td>
 				<td>{pressao}</td>
+				<td>{estado}</td>
 			</tr>
 		);
 	}
