@@ -19,7 +19,7 @@ class FormPress extends Component {
 		event.preventDefault();
 
 		var pressao = this.state.value.split("/");
-		var max = Number.isInteger(pressao[0] / 10) && (pressao[0] != 10) ? pressao[0] / 10 : pressao[0];
+		var max = Number.isInteger(pressao[0] / 10) && (pressao[0] !== 10) ? pressao[0] / 10 : pressao[0];
 		var min = Number.isInteger(pressao[1] / 10) ? pressao[1] / 10 : pressao[1];
 
 		if (max < 10 && min <= 6) {

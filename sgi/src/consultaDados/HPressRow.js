@@ -3,9 +3,6 @@ import React, { Component } from 'react';
 
 
 class HPressRow extends Component {
-	constructor(props) {
-		super(props);
-	}
 
   	render() {
   		const {
