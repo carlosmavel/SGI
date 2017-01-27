@@ -7,8 +7,8 @@ class RetornoMuitoUrgente extends Component {
   render(){
     return(
       <Alert bsStyle="warning">
-        <h3><strong> Sua Pressão Arterial está normal!</strong></h3>
-        <p>Mantenha sua rotina de alimentação saudável e atividade física regularmente</p>
+        <h3><strong> Sua Pressão Arterial está Alta!</strong></h3>
+        <p>Procure um consultório Médico</p>
       </Alert>
     );
   }

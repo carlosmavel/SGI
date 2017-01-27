@@ -63,10 +63,10 @@ class FormPress extends Component {
 			<form onSubmit={this.handleSubmit}>
 
 				<div className="form-group">
-					<label>Pressão Arterial Máxima/Mínima </label>
+					<label>Pressão Arterial Máxima(Sistólica) / Mínima(Diastólica) </label>
 					<input
 						type="text"
-						maxLength="4"
+						maxLength="7"
 						ref="ArterialMaxi"
 						className="form-control"
 						pattern="\d{1,3}\/\d{1,3}"
