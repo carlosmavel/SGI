@@ -12,8 +12,8 @@ class HPressRow extends Component {
 
 		return(
 			<tr>
-				<td>{pressao}</td>
 				<td>{data}</td>
+				<td>{pressao}</td>
 			</tr>
 		);
 	}

@@ -23,7 +23,7 @@ class LoggedView extends Component {
 			initial: <HomeLogged />,
 			h_press: <HPressLogged />,
 			h_glice: <HGliceLogged />,
-			i_press: <Jumbotron />,
+			i_press: <Jumbotron setView={this.setView}/>,
 			i_glice: <JumboGlice />
 		}
 	}

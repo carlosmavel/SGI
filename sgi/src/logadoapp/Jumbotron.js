@@ -3,19 +3,20 @@ import React, { Component } from 'react';
 import FormPress from './FormPress';
 
 class Jumbotron extends Component {
-  render() {
-    return(
+	
+	render() {
+		return(
 
-        <div className="jumbotron">
-          <h2>Informe a Presssão Arterial</h2>
-            <div className="row">
-              <FormPress />
-         
-            </div>
-        </div>
+				<div className="jumbotron">
+					<h2>Informe a Presssão Arterial</h2>
+						<div className="row">
+							<FormPress setView={this.props.setView}/>
+				 
+						</div>
+				</div>
 
 		);
-  }
+	}
 }
 
 export default Jumbotron;
