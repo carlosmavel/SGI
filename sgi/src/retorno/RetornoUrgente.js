@@ -11,8 +11,8 @@ class RetornoUrgente extends Component {
       <div>
           <RetornoUrgenteStyle />
         <Alert bsStyle='custom'>
-          <h3><strong> Sua Pressão Arterial está um pouco Alta!</strong></h3>
-          <p>Procure um local para fazer aferição</p>
+          <h3><strong> Sua Pressão Arterial está baixa!</strong></h3>
+          <p>Procure uma Unidade de Saúde</p>
         </Alert>
       </div>
     );
