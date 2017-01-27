@@ -10,7 +10,7 @@ class RetornoEmergencia extends Component {
         <h3><strong> Sua Pressão Arterial está muito Alta!</strong></h3>
         <p>Procure um Hospital com urgência</p>
         <p>
-        	<Button onClick={() => {this.props.toggleCollapse()}}>Hide Alert</Button>
+        	<Button onClick={() => {this.props.toggleCollapse()}}>Fechar</Button>
         </p>
       </Alert>
     );

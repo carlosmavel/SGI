@@ -10,7 +10,7 @@ class RetornoNaoUrgente extends Component {
         <h3><strong> Sua Pressão Arterial está Normal!</strong></h3>
         <p>Pratique atividade física aliada a uma alimentação balanceada para manter sua saúde em dia</p>
         <p>
-        	<Button onClick={() => {this.props.toggleCollapse()}}>Hide Alert</Button>
+        	<Button onClick={() => {this.props.toggleCollapse()}}>Fechar</Button>
         </p>
       </Alert>
     );
