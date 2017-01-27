@@ -40,7 +40,7 @@ class LoggedContainer extends Component {
 					<Navbar onSelect={this.setView}>
 						<Navbar.Header>
 							<Navbar.Brand>
-								<a href="#">Início</a>
+								<a href="#" onClick={()=>{this.setView("initial")}}>Início</a>
 							</Navbar.Brand>
 						</Navbar.Header>
 						<Nav>
