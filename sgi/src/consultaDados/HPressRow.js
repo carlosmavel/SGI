@@ -22,7 +22,7 @@ class HPressRow extends Component {
 			estado = "Normal";
 		} else if (max >= 14 && max < 16 && min >= 9 && min < 10) {
 			estado = "Hipertensão limite";
-		} else if (max >= 16 && max < 18 && min >= 10 && min < 11)  {
+		} else  {
 			estado = "Hipertensão moderada";
 		}
 
