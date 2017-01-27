@@ -10,7 +10,11 @@ class Jumbotron extends Component {
 				<div className="jumbotron">
 					<h2>Informe a Presssão Arterial</h2>
 						<div className="row">
-							<FormPress setView={this.props.setView} userId={this.props.userId} />
+							<FormPress
+								setView={this.props.setView}
+								userId={this.props.userId}
+								setRetorno={this.props.setRetorno}
+							/>
 
 						</div>
 				</div>

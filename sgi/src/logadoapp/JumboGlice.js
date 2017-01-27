@@ -9,7 +9,11 @@ class JumboGlice extends Component {
         <div className="jumbotron">
           <h2>Informe o teste de Glicemia </h2>
             <div className="row">
-               <FormGlice setView={this.props.setView}  userId={this.props.userId} />
+               <FormGlice
+                setView={this.props.setView}
+                userId={this.props.userId}
+                setRetorno={this.props.setRetorno}
+              />
             </div>
         </div>
 

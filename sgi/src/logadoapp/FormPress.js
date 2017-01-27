@@ -29,8 +29,7 @@ class FormPress extends Component {
 			return dado.id;
 		});
 		ids.sort((a,b)=>{return a - b;});
-		console.log(ids);
-		console.log(ids[ids.length - 1] + 1);
+
 		let d = new Date();
 		dados.push({
 			"id": ids[ids.length - 1] + 1,
@@ -43,13 +42,17 @@ class FormPress extends Component {
 				() => {
 
 					if (max < 10 && min <= 6) {
-						alert('Valor maior que 100, classificação: HIPERTENSÃO (' + this.state.value + ')');
+						this.props.setRetorno("urgente");
+						// alert('Valor maior que 100, classificação: HIPERTENSÃO (' + this.state.value + ')');
 					} else if (max >= 10 && max < 14 && min >= 6 && min < 9) {
-						alert('Valor maior que 100 e menor 140, classificação: NORMAL (' + this.state.value + ')');
+						this.props.setRetorno("");
+						// alert('Valor maior que 100 e menor 140, classificação: NORMAL (' + this.state.value + ')');
 					} else if (max >= 14 && max < 16 && min >= 9 && min < 10) {
-						alert('Valor maior que 140 e menor 160, classificação: HIPERTENSÃO LIMITE (' + this.state.value + ')');
+						this.props.setRetorno("");
+						// alert('Valor maior que 140 e menor 160, classificação: HIPERTENSÃO LIMITE (' + this.state.value + ')');
 					} else if (max >= 16 && max <= 18 && min >= 10 && min < 11)  {
-						alert('Valor maior que 160 e menor 180, classificação: HIPERTENSÃO MODERADA (' + this.state.value + ')');
+						this.props.setRetorno("");
+						// alert('Valor maior que 160 e menor 180, classificação: HIPERTENSÃO MODERADA (' + this.state.value + ')');
 					}
 
 					this.props.setView("h_press");
