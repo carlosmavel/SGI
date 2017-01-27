@@ -16,6 +16,7 @@ class SignUp extends Component {
     super(props);
     this.email = null;
     this.password = null;
+    this.userID = null;
 
     this.inputConfigs = [
           { type: "email", setValue: this.setEmail },
@@ -46,12 +47,16 @@ class SignUp extends Component {
 
 
   finalValidation = () => {
-    return (
-      this.email &&
-      this.password &&
-      this.doublePassword &&
-      (this.password.value === this.doublePassword.value)
-    );
+    if(this.email && this.password && this.doublePassword){
+      if(!(this.password.value === this.doublePassword.value)){
+        this.showError("As senhas digitadas não estão iguais, tentar novamente?");
+        return false;
+      }
+    }else{
+      this.showError('As informações de login não foram válidas, tentar novamente?');
+      return false;
+    }
+    return true;
   }
 
   saveUser = () => {
@@ -61,22 +66,24 @@ class SignUp extends Component {
       return user.id;
     });
     ids.sort();
+    this.userID = ids[ids.lenght -1] + 1;
     users.push({
-      "id": ids[ids.lenght -1] + 1,
+      "id": this.userID,
       "email": this.email.value,
       "password": this.password.value
     });
     fs.writeFile(filePath,users)
     .then(()=>{
+      this.props.setUserID(this.userID);
       this.props.setPage("logged");
     }
     ,()=>{
-      this.showError();
+      this.showError("Não foi possível salvar, tentar novamente?");
     });
   }
 
-  showError = () => {
-    if(!confirm('As informações de login não foram válidas, tentar novamente?')){
+  showError = (msg) => {
+    if(!confirm(msg)){
       this.hide();
     }
   }
@@ -85,8 +92,6 @@ class SignUp extends Component {
   submit = () => {
     if(this.finalValidation()){
       this.saveUser();
-    } else {
-      this.showError();
     }
   }
 

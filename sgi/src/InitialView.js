@@ -44,7 +44,7 @@ class InitialView extends Component {
 
   render(){
     let ComponentModal = modals[this.state.modal?this.state.modal:"login"];
-    let getModal = <ComponentModal toggleModal={this.toggleModal} setPage={this.props.setPage} showModal={this.state.showModal} />;
+    let getModal = <ComponentModal toggleModal={this.toggleModal} setPage={this.props.setPage} showModal={this.state.showModal} setUserID={this.props.setUserID} />;
     return(
       <div>
         <InitialNavbar toggleModal={this.toggleModal} />

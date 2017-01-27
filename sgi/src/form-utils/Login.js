@@ -16,6 +16,7 @@ class Login extends Component {
     super(props);
     this.email = null;
     this.password = null;
+    this.userID = null;
 
     this.inputConfigs = [
           { type: "email", setValue: this.setEmail },
@@ -46,6 +47,7 @@ class Login extends Component {
   submit = () => {
     if(this.finalValidation()){
       if(this.checkUser()){
+        this.props.setUserID(this.userID);
         this.props.setPage("logged");
       } else {
         if(!confirm("Usuário não encontrado, tentar novamente?")){
@@ -63,6 +65,7 @@ class Login extends Component {
     let users = require('../db/users.json').users;
     for(let user of users){
       if(user.email === this.email.value.trim() && user.password === this.password.value.trim()){
+        this.userID = user.id;
         return true;
       }
     }
