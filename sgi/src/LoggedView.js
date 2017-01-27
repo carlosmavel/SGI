@@ -8,8 +8,8 @@ import LoggedContainer from './LoggedContainer';
 import HomeLogged from './HomeLogged';
 import HPressLogged from './HPressLogged';
 import HGlicoLogged from './HGlicoLogged';
-import IPressLogged from './IPressLogged';
-import IGliceLogged from './IGliceLogged';
+import Jumbotron from './logadoapp/Jumbotron';
+import JumboGlice from './logadoapp/JumboGlice';
 
 
 class LoggedView extends Component {
@@ -23,8 +23,8 @@ class LoggedView extends Component {
 			initial: <HomeLogged />,
 			h_press: <HPressLogged />,
 			h_glice: <HGlicoLogged />,
-			i_press: <IPressLogged />,
-			i_glice: <IGliceLogged />
+			i_press: <Jumbotron />,
+			i_glice: <JumboGlice />
 		}
 	}
 
