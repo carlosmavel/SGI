@@ -66,7 +66,7 @@ class SignUp extends Component {
       return user.id;
     });
     ids.sort();
-    this.userId = ids[ids.lenght -1] + 1;
+    this.userId = ids[ids.length - 1 ] + 1;
     users.push({
       "id": this.userId,
       "email": this.email.value,
